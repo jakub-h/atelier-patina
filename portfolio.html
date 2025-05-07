@@ -66,29 +66,29 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-
-			<!-- Menu -->
-			<script>
-				document.addEventListener("DOMContentLoaded", function() {
-				  fetch('menu.html')
-					.then(response => response.text())
-					.then(data => {
-					  document.getElementById('navbar').innerHTML = data;
-					  // Now that the menu is loaded, load your main JS
-					  var script = document.createElement('script');
-					  script.src = 'assets/js/main.js';
-					  script.onload = function() {
-						// Now initialize GLightbox
-						const lightbox = GLightbox({
-						  selector: '.glightbox'
-						});
-					  };
-					  document.body.appendChild(script);
-					});
-				});
-			</script>
-
-			<!-- GLightbox JS -->
+			<!-- GLightbox JS FIRST -->
 			<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+			<!-- Menu and GLightbox initialization -->
+			<script>
+			document.addEventListener("DOMContentLoaded", function() {
+			fetch('menu.html')
+				.then(response => response.text())
+				.then(data => {
+				document.getElementById('navbar').innerHTML = data;
+				// Now that the menu is loaded, load your main JS
+				var script = document.createElement('script');
+				script.src = 'assets/js/main.js';
+				script.onload = function() {
+					// Now initialize GLightbox
+					if (typeof GLightbox === "function") {
+					GLightbox({ selector: '.glightbox' });
+					} else {
+					console.error("GLightbox is not loaded!");
+					}
+				};
+				document.body.appendChild(script);
+				});
+			});
+			</script>
 	</body>
 </html>
