@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- GLightbox CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 	</head>
 	<body class="is-preload">
 
@@ -23,7 +25,23 @@
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
-								<!-- Content will be added later -->
+								<div class="gallery">
+									<a href="images/gallery/calouneni.jpg" class="glightbox" data-gallery="portfolio">
+										<img src="images/gallery/calouneni_thumb.jpg" alt="Item 1" />
+									</a>
+									<a href="images/gallery/renovace.jpg" class="glightbox" data-gallery="portfolio">
+										<img src="images/gallery/renovace_thumb.jpg" alt="Item 2" />
+									</a>
+									<a href="images/gallery/banner.jpg" class="glightbox" data-gallery="portfolio">
+										<img src="images/gallery/banner_thumb.jpg" alt="Item 2" />
+									</a>
+									<a href="images/gallery/ratan.jpg" class="glightbox" data-gallery="portfolio">
+										<img src="images/gallery/ratan_thumb.jpg" alt="Item 2" />
+									</a>
+									<a href="images/gallery/restaurovani.jpg" class="glightbox" data-gallery="portfolio">
+										<img src="images/gallery/restaurovani_thumb.jpg" alt="Item 2" />
+									</a>
+								</div>
 							</div>
 						</section>
 					</article>
@@ -49,6 +67,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 
+			<!-- Menu -->
 			<script>
 				document.addEventListener("DOMContentLoaded", function() {
 				  fetch('menu.html')
@@ -58,9 +77,18 @@
 					  // Now that the menu is loaded, load your main JS
 					  var script = document.createElement('script');
 					  script.src = 'assets/js/main.js';
+					  script.onload = function() {
+						// Now initialize GLightbox
+						const lightbox = GLightbox({
+						  selector: '.glightbox'
+						});
+					  };
 					  document.body.appendChild(script);
 					});
 				});
 			</script>
+
+			<!-- GLightbox JS -->
+			<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 	</body>
 </html>
