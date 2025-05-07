@@ -13,24 +13,7 @@
 			<div id="page-wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">Patina</a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="contact.html">Kontakt</a></li>
-											<li><a href="portfolio.html">Portfolio</a></li>
-											<li><a href="about-us.html">O nás</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
+					<div id="navbar"></div>
 
 				<!-- Main -->
 					<article id="main">
@@ -65,7 +48,19 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
+			<script>
+				document.addEventListener("DOMContentLoaded", function() {
+				  fetch('menu.html')
+					.then(response => response.text())
+					.then(data => {
+					  document.getElementById('navbar').innerHTML = data;
+					  // Now that the menu is loaded, load your main JS
+					  var script = document.createElement('script');
+					  script.src = 'assets/js/main.js';
+					  document.body.appendChild(script);
+					});
+				});
+			</script>
 	</body>
 </html>
