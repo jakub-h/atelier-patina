@@ -112,16 +112,7 @@
 					</section>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; Hruškovi</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
+				<div id="footer"></div>
 
 			</div>
 
@@ -133,18 +124,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 
-			<script>
-				document.addEventListener("DOMContentLoaded", function() {
-				  fetch('menu.html')
-					.then(response => response.text())
-					.then(data => {
-					  document.getElementById('navbar').innerHTML = data;
-					  // Now that the menu is loaded, load your main JS
-					  var script = document.createElement('script');
-					  script.src = 'assets/js/main.js';
-					  document.body.appendChild(script);
-					});
-				});
-			</script>
+			<script src="assets/js/menu-loader.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/footer-loader.js"></script>
 	</body>
 </html>

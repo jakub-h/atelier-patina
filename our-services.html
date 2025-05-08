@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
+	<body class="landing is-preload">
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
@@ -185,15 +185,7 @@
 					</article>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; Patina</li>
-						</ul>
-					</footer>
+				<div id="footer"></div>
 
 			</div>
 
@@ -204,20 +196,8 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-
-			<script>
-				document.addEventListener("DOMContentLoaded", function() {
-				  fetch('menu.html')
-					.then(response => response.text())
-					.then(data => {
-					  document.getElementById('navbar').innerHTML = data;
-					  // Now that the menu is loaded, load your main JS
-					  var script = document.createElement('script');
-					  script.src = 'assets/js/main.js';
-					  document.body.appendChild(script);
-					});
-				});
-			</script>
+			<script src="assets/js/menu-loader.js"></script>
+			<script src="assets/js/footer-loader.js"></script>
 
 	</body>
 </html>

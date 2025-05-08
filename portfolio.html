@@ -7,9 +7,11 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!-- GLightbox CSS -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" /> -->
+		<!-- PhotoSwipe CSS -->
+		<link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
 	</head>
-	<body class="is-preload">
+	<body class="landing is-preload">
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
@@ -25,21 +27,36 @@
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
-								<div class="gallery">
-									<a href="images/gallery/calouneni.jpg" class="glightbox" data-gallery="portfolio">
+								<div class="gallery" id="portfolio-gallery">
+									<a href="images/gallery/calouneni.jpg"
+									   data-pswp-width="1633"
+									   data-pswp-height="1239"
+									   target="_blank">
 										<img src="images/gallery/calouneni_thumb.jpg" alt="Item 1" />
 									</a>
-									<a href="images/gallery/renovace.jpg" class="glightbox" data-gallery="portfolio">
+									<a href="images/gallery/renovace.jpg"
+									   data-pswp-width="1067"
+									   data-pswp-height="943"
+									   target="_blank">
 										<img src="images/gallery/renovace_thumb.jpg" alt="Item 2" />
 									</a>
-									<a href="images/gallery/banner.jpg" class="glightbox" data-gallery="portfolio">
-										<img src="images/gallery/banner_thumb.jpg" alt="Item 2" />
+									<a href="images/gallery/banner.jpg"
+									   data-pswp-width="1920"
+									   data-pswp-height="1080"
+									   target="_blank">
+										<img src="images/gallery/banner_thumb.jpg" alt="Item 3" />
 									</a>
-									<a href="images/gallery/ratan.jpg" class="glightbox" data-gallery="portfolio">
-										<img src="images/gallery/ratan_thumb.jpg" alt="Item 2" />
+									<a href="images/gallery/ratan.jpg"
+									   data-pswp-width="1920"
+									   data-pswp-height="1080"
+									   target="_blank">
+										<img src="images/gallery/ratan_thumb.jpg" alt="Item 4" />
 									</a>
-									<a href="images/gallery/restaurovani.jpg" class="glightbox" data-gallery="portfolio">
-										<img src="images/gallery/restaurovani_thumb.jpg" alt="Item 2" />
+									<a href="images/gallery/restaurovani.jpg"
+									   data-pswp-width="1920"
+									   data-pswp-height="1080"
+									   target="_blank">
+										<img src="images/gallery/restaurovani_thumb.jpg" alt="Item 5" />
 									</a>
 								</div>
 							</div>
@@ -47,15 +64,7 @@
 					</article>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; Patina</li>
-						</ul>
-					</footer>
+				<div id="footer"></div>
 
 			</div>
 
@@ -66,29 +75,8 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<!-- GLightbox JS FIRST -->
-			<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-			<!-- Menu and GLightbox initialization -->
-			<script>
-			document.addEventListener("DOMContentLoaded", function() {
-			fetch('menu.html')
-				.then(response => response.text())
-				.then(data => {
-				document.getElementById('navbar').innerHTML = data;
-				// Now that the menu is loaded, load your main JS
-				var script = document.createElement('script');
-				script.src = 'assets/js/main.js';
-				script.onload = function() {
-					// Now initialize GLightbox
-					if (typeof GLightbox === "function") {
-					GLightbox({ selector: '.glightbox' });
-					} else {
-					console.error("GLightbox is not loaded!");
-					}
-				};
-				document.body.appendChild(script);
-				});
-			});
-			</script>
+			<script src="assets/js/menu-loader.js"></script>
+			<script type="module" src="assets/js/gallery-init.js"></script>
+			<script src="assets/js/footer-loader.js"></script>
 	</body>
 </html>
