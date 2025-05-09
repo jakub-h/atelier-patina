@@ -4169,3 +4169,43 @@ input, select, textarea {
     color: #c8ece9;
     border-color: #2e3842;
 }
+
+.image-overlay-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image-overlay-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1), filter 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+.image-overlay-container .before-img {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  transform: scale(1.04);
+  filter: blur(2px) grayscale(20%);
+  transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1), filter 0.6s cubic-bezier(.4,0,.2,1);
+}
+
+.gallery-item:hover .before-img,
+.gallery-item:focus .before-img {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0) grayscale(0%);
+}
+
+.gallery-item:hover .after-img,
+.gallery-item:focus .after-img {
+  transform: scale(1.03);
+  filter: blur(1px) grayscale(10%);
+}
