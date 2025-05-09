@@ -23,34 +23,33 @@ def get_image_dimensions(image_path: Path) -> tuple[int, int]:
 def create_gallery_html(images_dir: Path, relative_path: str) -> BeautifulSoup:
     """Create HTML for gallery items using BeautifulSoup"""
     soup = BeautifulSoup("", "html.parser")
-    image_extensions = [".jpg", ".jpeg", ".png", ".PNG"]
 
-    for ext in image_extensions:
-        for image_path in images_dir.glob(f"*{ext}"):
-            if "thumb" not in image_path.stem:  # Skip thumbnails
-                # Find corresponding thumbnail
-                thumb_path = (
-                    images_dir
-                    / "thumbnails"
-                    / f"{image_path.stem}-thumb{image_path.suffix}"
-                )
-                if not thumb_path.exists():
-                    continue
+    for image_path in sorted(images_dir.iterdir()):
+        if image_path.suffix not in [".jpg", ".jpeg", ".png", ".PNG"]:
+            continue
 
-                width, height = get_image_dimensions(image_path)
-                relative_image_path = f"../{relative_path}/{image_path.name}"
-                relative_thumb_path = f"../{relative_path}/thumbnails/{thumb_path.name}"
+        if "thumb" not in image_path.stem:  # Skip thumbnails
+            # Find corresponding thumbnail
+            thumb_path = (
+                images_dir
+                / "thumbnails"
+                / f"{image_path.stem}-thumb{image_path.suffix}"
+            )
+            if not thumb_path.exists():
+                continue
 
-                # Create elements using BeautifulSoup
-                a_tag = soup.new_tag("a", href=relative_image_path)
-                a_tag["data-pswp-width"] = str(width)
-                a_tag["data-pswp-height"] = str(height)
+            width, height = get_image_dimensions(image_path)
+            relative_image_path = f"../{relative_path}/{image_path.name}"
+            relative_thumb_path = f"../{relative_path}/thumbnails/{thumb_path.name}"
 
-                img_tag = soup.new_tag(
-                    "img", src=relative_thumb_path, alt=image_path.stem
-                )
-                a_tag.append(img_tag)
-                soup.append(a_tag)
+            # Create elements using BeautifulSoup
+            a_tag = soup.new_tag("a", href=relative_image_path)
+            a_tag["data-pswp-width"] = str(width)
+            a_tag["data-pswp-height"] = str(height)
+
+            img_tag = soup.new_tag("img", src=relative_thumb_path, alt=image_path.stem)
+            a_tag.append(img_tag)
+            soup.append(a_tag)
 
     return soup
 
@@ -96,7 +95,7 @@ def main() -> None:
         gallery_div.extend(new_gallery_soup.contents)
 
         # Write updated content back to file
-        page_path.write_text(str(soup), encoding="utf-8")
+        page_path.write_text(soup.prettify(formatter="minimal"), encoding="utf-8")
         print(f"Updated gallery in {page_path}")
 
 
