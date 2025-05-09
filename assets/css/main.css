@@ -3479,7 +3479,7 @@ input, select, textarea {
 			position: absolute;
 			right: 0;
 			top: 0;
-			vertical-align: middle;
+			/* vertical-align: middle; */
 			width: 7em;
 		}
 
@@ -3658,7 +3658,7 @@ input, select, textarea {
 	}
 
 		#banner:before {
-			background: rgba(0, 0, 0, 0.5);
+			background: rgba(0, 0, 0, 0.7);
 			content: '';
 			display: block;
 			height: 100%;
