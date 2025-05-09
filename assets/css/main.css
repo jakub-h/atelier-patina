@@ -2559,6 +2559,9 @@ input, select, textarea {
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			background-size: cover;
+			background-position: center;
+			background-color: rgba(0, 0, 0, 0.07);
 		}
 
 			.features li a {
@@ -2623,45 +2626,28 @@ input, select, textarea {
 			}
 
 			.features li:nth-child(1) {
-				background-color: rgba(0, 0, 0, 0.07);
-				background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../images/restaurovani.jpg");
-				background-size: cover;
-				background-position: center;
+				background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url("../../images/restaurovani.jpg");
 			}
 
 			.features li:nth-child(2) {
-				background-color: rgba(0, 0, 0, 0.07);
-				background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../images/ratan.jpg");
-				background-size: cover;
-				background-position: center;
+				background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url("../../images/ratan.jpg");
+
 			}
 
 			.features li:nth-child(3) {
-				background-color: rgba(0, 0, 0, 0.07);
-				background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../images/calouneni.jpg");
-				background-size: cover;
-				background-position: center;
+				background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url("../../images/calouneni.jpg");
 			}
 
 			.features li:nth-child(4) {
-				background-color: rgba(0, 0, 0, 0.07);
-				background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../images/renovace.jpg");
-				background-size: cover;
-				background-position: center;
+				background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url("../../images/renovace.jpg");
 			}
 
 			.features li:nth-child(5) {
-				background-color: rgba(0, 0, 0, 0.07);
-				background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../images/renovace.jpg");
-				background-size: cover;
-				background-position: center;
+				background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url("../../images/renovace.jpg");
 			}
 
 			.features li:nth-child(6) {
-				background-color: rgba(0, 0, 0, 0.07);
-				background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../images/renovace.jpg");
-				background-size: cover;
-				background-position: center;
+				background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url("../../images/renovace.jpg");
 			}
 
 			@media screen and (max-width: 980px) {
@@ -3672,7 +3658,7 @@ input, select, textarea {
 	}
 
 		#banner:before {
-			background: rgba(0, 0, 0, 0.6);
+			background: rgba(0, 0, 0, 0.5);
 			content: '';
 			display: block;
 			height: 100%;
@@ -4085,4 +4071,52 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+#portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1100px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+@media screen and (max-width: 980px) {
+  #portfolio-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 900px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #portfolio-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 400px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+
+#portfolio-gallery a {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 0.3em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #222;
+  transition: box-shadow 0.2s;
+}
+
+#portfolio-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  display: block;
+  transition: transform 0.3s;
+}
 

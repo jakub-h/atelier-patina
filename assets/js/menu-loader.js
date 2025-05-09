@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('menu.html')
+    fetch('/templates/menu.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('navbar').innerHTML = data;
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.remove('is-preload');
         // Now that the menu is loaded, load your main JS
         var script = document.createElement('script');
-        script.src = 'assets/js/main.js';
+        script.src = '/assets/js/main.js';
         document.body.appendChild(script);
     });
 });
