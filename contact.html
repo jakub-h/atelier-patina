@@ -23,7 +23,77 @@
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
-								<!-- Content will be added later -->
+								<div class="row">
+									<div class="col-6 col-12-medium">
+										<h3>Kontaktní informace</h3>
+										<p>
+											<strong>Patina</strong><br>
+											IČ: 12345678<br>
+											DIČ: CZ12345678<br>
+											<br>
+											<strong>Adresa:</strong><br>
+											Ulice 123<br>
+											123 45 Město<br>
+											Česká republika<br>
+											<br>
+											<strong>Kontakt:</strong><br>
+											Tel: +420 123 456 789<br>
+											Email: info@patina.cz<br>
+											<br>
+											<strong>Otevřeno:</strong><br>
+											Pondělí - Pátek: 9:00 - 17:00<br>
+											Sobota - Neděle: Zavřeno
+										</p>
+									</div>
+									<div class="col-6 col-12-medium">
+										<h3>Napište nám</h3>
+										<form method="POST" action="https://formspree.io/f/YOUR_FORMSPREE_ID">
+											<div class="row gtr-uniform">
+												<div class="col-6 col-12-xsmall">
+													<input type="text" name="name" id="name" value="" placeholder="Jméno" required />
+												</div>
+												<div class="col-6 col-12-xsmall">
+													<input type="email" name="email" id="email" value="" placeholder="Email" required />
+												</div>
+												<div class="col-12">
+													<input type="text" name="subject" id="subject" value="" placeholder="Předmět" required />
+												</div>
+												<div class="col-12">
+													<textarea name="message" id="message" placeholder="Vaše zpráva" rows="6" required></textarea>
+												</div>
+												<div class="col-12">
+													<div class="file-upload">
+														<label for="files" class="button">Vybrat soubory</label>
+														<input type="file" name="files" id="files" multiple accept="image/*,.pdf" style="display: none;" />
+														<span id="file-chosen" class="file-chosen-list">Žádný soubor nevybrán</span>
+													</div>
+													<small>Můžete nahrát obrázky (JPG, PNG) nebo PDF dokumenty. Maximální velikost souboru je 10MB.</small>
+												</div>
+												<div class="col-12">
+													<ul class="actions">
+														<li><input type="submit" value="Odeslat zprávu" class="primary" /></li>
+														<li><input type="reset" value="Vymazat" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12">
+										<h3>Kde nás najdete</h3>
+										<div class="map-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+											<iframe
+												src="https://mapy.com/s/ferudofeza"
+												frameborder="0"
+												style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+												allowfullscreen=""
+												loading="lazy"
+												referrerpolicy="no-referrer-when-downgrade">
+											</iframe>
+										</div>
+									</div>
+								</div>
 							</div>
 						</section>
 					</article>
@@ -42,5 +112,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/menu-loader.js"></script>
 			<script src="assets/js/footer-loader.js"></script>
+			<script src="assets/js/formspree.js"></script>
 	</body>
 </html>
