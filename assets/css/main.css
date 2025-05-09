@@ -4120,3 +4120,92 @@ input, select, textarea {
   transition: transform 0.3s;
 }
 
+/* File Upload Styles */
+.file-upload {
+    margin-bottom: 1em;
+}
+
+.file-upload label {
+    margin-right: 1em;
+}
+
+#file-chosen {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.file-upload small {
+    display: block;
+    margin-top: 0.5em;
+    color: #666;
+}
+
+.file-chosen-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    min-height: 2em;
+}
+
+.file-tag {
+    display: inline-block;
+    background: #69806B;
+    color: #fff;
+    border-radius: 1em;
+    padding: 0.3em 0.9em;
+    font-size: 0.95em;
+    font-weight: 600;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    border: 1px solid #4e5e53;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, color 0.2s;
+}
+
+.file-tag:hover {
+    background: #50695c;
+    color: #c8ece9;
+    border-color: #2e3842;
+}
+
+.image-overlay-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image-overlay-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1), filter 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+.image-overlay-container .before-img {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  transform: scale(1.04);
+  filter: blur(2px) grayscale(20%);
+  transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1), filter 0.6s cubic-bezier(.4,0,.2,1);
+}
+
+.gallery-item:hover .before-img,
+.gallery-item:focus .before-img {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0) grayscale(0%);
+}
+
+.gallery-item:hover .after-img,
+.gallery-item:focus .after-img {
+  transform: scale(1.03);
+  filter: blur(1px) grayscale(10%);
+}
