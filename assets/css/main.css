@@ -4211,3 +4211,20 @@ input, select, textarea {
   transform: scale(1.05);
   filter: blur(1px) grayscale(10%);
 }
+
+@media screen and (max-width: 980px) {
+  .wrapper {
+    padding: 3em 0 1em 0;
+  }
+  .wrapper > .inner {
+    width: 100%;
+    padding: 0 1.2em;
+	padding-left: 2em !important;
+    padding-right: 2em !important;
+  }
+  /* Remove mobile-specific padding for #portfolio-gallery */
+  #portfolio-gallery {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
