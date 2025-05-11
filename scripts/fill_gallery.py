@@ -11,6 +11,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("gallery_dir", help="Directory containing gallery pages")
     parser.add_argument("images_dir", help="Directory containing image subdirectories")
+    parser.add_argument("--item-name", "-i", default=None, help="Item name to process")
     return parser.parse_args()
 
 
@@ -67,6 +68,9 @@ def main() -> None:
     for page_path in gallery_pages_dir.glob("*.html"):
         # Extract item name from filename (e.g., 'zidle' from 'zidle.html')
         item_name = page_path.stem
+
+        if args.item_name and item_name != args.item_name:
+            continue
 
         # Find corresponding images directory
         item_images_dir = images_dir / item_name
