@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     siteBase = ''; // Custom domain
   }
 
-  fetch(`${siteBase}/footer.html`)
+  fetch(`${siteBase}/templates/footer.html`)
     .then(response => response.text())
     .then(data => {
       document.getElementById('footer').outerHTML = data;

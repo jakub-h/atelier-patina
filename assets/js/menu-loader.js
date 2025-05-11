@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         siteBase = ''; // Custom domain
     }
 
-    fetch(`${siteBase}/menu.html`)
+    fetch(`${siteBase}/templates/menu.html`)
     .then(response => response.text())
     .then(data => {
         document.getElementById('navbar').innerHTML = data;
