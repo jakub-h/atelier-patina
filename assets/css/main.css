@@ -2647,7 +2647,7 @@ input, select, textarea {
 			}
 
 			.features li:nth-child(6) {
-				background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url("../../images/renovace.jpg");
+				background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url("../../images/terasa.jpg");
 			}
 
 			@media screen and (max-width: 980px) {
