@@ -4108,6 +4108,44 @@ input, select, textarea {
   border-radius: 0.3em;
   transition: transform 0.2s;
   border-bottom: none !important;
+  position: relative;
+}
+
+#realizace-gallery a:after {
+  content: '\f054';  /* Font Awesome chevron-right icon */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  z-index: 3;
+  padding-left: 0.2em; /* Add slight padding to center the arrow */
+}
+
+#realizace-gallery a:hover:after {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 736px) {
+  #realizace-gallery a:after {
+    width: 1.8em;
+    height: 1.8em;
+    font-size: 0.7em;
+    bottom: 0.8em;
+    right: 0.8em;
+  }
 }
 
 #realizace-gallery img {
