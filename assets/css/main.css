@@ -3059,7 +3059,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style3 header.major p {
-				color: #d3d4e4;
+				color: #ffffff;
 			}
 
 			.wrapper.style3 label {
@@ -4072,7 +4072,7 @@ input, select, textarea {
 		background-color: #1d242a;
 	}
 
-#portfolio-gallery {
+#realizace-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5em;
@@ -4085,14 +4085,14 @@ input, select, textarea {
 }
 
 @media screen and (max-width: 980px) {
-  #portfolio-gallery {
+  #realizace-gallery {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     max-width: 900px;
   }
 }
 
 @media screen and (max-width: 736px) {
-  #portfolio-gallery {
+  #realizace-gallery {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     max-width: 400px;
     padding-left: 1.5em;
@@ -4100,7 +4100,7 @@ input, select, textarea {
   }
 }
 
-#portfolio-gallery a {
+#realizace-gallery a {
   display: block;
   width: 100%;
   aspect-ratio: 3 / 4;
@@ -4110,7 +4110,7 @@ input, select, textarea {
   border-bottom: none !important;
 }
 
-#portfolio-gallery img {
+#realizace-gallery img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -4169,12 +4169,37 @@ input, select, textarea {
   .wrapper > .inner {
     width: 100%;
     padding: 0 1.2em;
-	padding-left: 2em !important;
+    padding-left: 2em !important;
     padding-right: 2em !important;
   }
-  /* Remove mobile-specific padding for #portfolio-gallery */
-  #portfolio-gallery {
+  /* Remove mobile-specific padding for #realizace-gallery */
+  #realizace-gallery {
     padding-left: 0;
     padding-right: 0;
   }
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4em;
+    margin-bottom: 2em;
+}
+
+.two-columns .column {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.two-columns .column p {
+    text-align: justify;
+    hyphens: auto;
+}
+
+@media screen and (max-width: 736px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
 }

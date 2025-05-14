@@ -85,7 +85,7 @@ def main() -> None:
         soup = BeautifulSoup(html_content, "html.parser")
 
         # Find the gallery div
-        gallery_div = soup.find("div", {"class": "gallery", "id": "portfolio-gallery"})
+        gallery_div = soup.find("div", {"class": "gallery", "id": "realizace-gallery"})
         if not gallery_div or not isinstance(gallery_div, Tag):
             print(f"Warning: Gallery div not found in {page_path}")
             continue

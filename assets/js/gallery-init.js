@@ -1,6 +1,6 @@
 import PhotoSwipeLightbox from './photoswipe-lightbox.esm.js';
 const lightbox = new PhotoSwipeLightbox({
-  gallery: '#portfolio-gallery',
+  gallery: '#realizace-gallery',
   children: 'a',
   pswpModule: () => import('./photoswipe.esm.js')
 });
