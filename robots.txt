@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /venv/
+Disallow: /scripts/
+Disallow: /templates/
+Disallow: /spectral/
+Disallow: /assets/sass/
+
+Allow: /
+
+Sitemap: https://restaurovanipatina.cz/sitemap.xml
