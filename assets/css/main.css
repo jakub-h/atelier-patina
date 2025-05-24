@@ -4298,3 +4298,19 @@ input, select, textarea {
   color: #00796b;
   border-color: #bdbdbd;
 }
+
+@media screen and (max-width: 600px) {
+  .internal-links a {
+    display: block;
+    margin: 0.5em auto;
+    width: 90%;
+    font-size: 1em;
+    padding: 0.8em 0;
+  }
+  .internal-links p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+}
