@@ -3568,11 +3568,21 @@ input, select, textarea {
 				line-height: inherit;
 			}
 
+				#header h1 a img {
+					vertical-align: middle;
+					max-height: 2.5em;
+					width: auto;
+				}
+
 				@media screen and (max-width: 736px) {
 
 					#header h1 a {
 						font-size: 0.8em;
 					}
+
+						#header h1 a img {
+							max-height: 2em;
+						}
 
 				}
 
