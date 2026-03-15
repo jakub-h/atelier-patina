@@ -38,6 +38,17 @@ document.addEventListener("DOMContentLoaded", function() {
             link.setAttribute('href', `${siteBase}/${currentHref}`);
         });
 
+        // Highlight active page link
+        document.querySelectorAll('#nav a, #menu a').forEach(link => {
+            try {
+                const linkPath = new URL(link.href).pathname;
+                if (linkPath === currentPath ||
+                    (currentPath === '/' && linkPath.endsWith('/index.html'))) {
+                    link.classList.add('active');
+                }
+            } catch(e) {}
+        });
+
         // Remove is-preload as soon as menu is ready
         document.body.classList.remove('is-preload');
         // Now that the menu is loaded, load your main JS
