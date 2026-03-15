@@ -1,20 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const actualBtn = document.getElementById('files');
-    const fileChosen = document.getElementById('file-chosen');
-
-    if (actualBtn && fileChosen) {
-        actualBtn.addEventListener('change', function(){
-            if(this.files.length > 0) {
-                fileChosen.innerHTML = '';
-                Array.from(this.files).forEach(file => {
-                    const tag = document.createElement('span');
-                    tag.className = 'file-tag';
-                    tag.textContent = file.name;
-                    fileChosen.appendChild(tag);
-                });
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.photo-slot input[type="file"]').forEach(function (input) {
+        input.addEventListener('change', function () {
+            var slot = input.closest('.photo-slot');
+            var nameEl = slot.querySelector('.photo-slot-name');
+            if (input.files.length > 0) {
+                slot.classList.add('has-file');
+                nameEl.textContent = input.files[0].name;
+                nameEl.title = input.files[0].name;
             } else {
-                fileChosen.textContent = 'Žádný soubor nevybrán';
+                slot.classList.remove('has-file');
+                nameEl.textContent = 'Foto ' + input.name.replace('foto_', '');
+                nameEl.title = '';
             }
         });
-    }
+    });
 });
