@@ -3739,6 +3739,44 @@ input, select, textarea {
 
 	}
 
+/* File upload */
+
+	.file-upload-label {
+		display: inline-block;
+		cursor: pointer;
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		border-radius: 4px;
+		padding: 0.5em 1em;
+		font-size: 0.85em;
+		transition: background 0.2s ease;
+		margin-bottom: 0.5em;
+	}
+
+	.file-upload-label:hover {
+		background: rgba(255, 255, 255, 0.18);
+	}
+
+	#files {
+		display: none;
+	}
+
+	.file-chosen-display {
+		font-size: 0.8em;
+		opacity: 0.6;
+		margin-bottom: 0.5em;
+		min-height: 1.4em;
+	}
+
+	.file-tag {
+		display: inline-block;
+		background: rgba(255, 255, 255, 0.15);
+		border-radius: 3px;
+		padding: 0.1em 0.5em;
+		margin: 0.2em 0.3em 0.2em 0;
+		font-size: 0.85em;
+	}
+
 /* Banner */
 
 	#banner {
