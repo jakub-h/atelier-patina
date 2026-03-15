@@ -3667,6 +3667,78 @@ input, select, textarea {
 				opacity: 0;
 			}
 
+/* Desktop nav links */
+
+	#header nav > ul > li.desktop-nav > a {
+		border-bottom: 2px solid transparent;
+		transition: border-color 0.2s ease, color 0.2s ease;
+		padding-bottom: 2px;
+	}
+
+	#header nav > ul > li.desktop-nav > a:hover {
+		border-bottom-color: rgba(255, 255, 255, 0.5);
+	}
+
+	#header nav > ul > li.desktop-nav > a.active {
+		border-bottom-color: rgba(255, 255, 255, 0.85);
+	}
+
+	/* Show desktop links on wide screens, hide hamburger */
+	@media screen and (min-width: 737px) {
+
+		#header nav > ul > li.special {
+			display: none;
+		}
+
+	}
+
+	/* Hide desktop links on mobile, show hamburger */
+	@media screen and (max-width: 736px) {
+
+		#header nav > ul > li.desktop-nav {
+			display: none;
+		}
+
+	}
+
+/* Mobile menu active state */
+
+	#menu ul > li > a.active {
+		opacity: 0.65;
+	}
+
+/* Footer contact line */
+
+	#footer .footer-contact {
+		list-style: none;
+		margin: 0 0 1em 0;
+		padding: 0;
+	}
+
+	#footer .footer-contact li {
+		display: inline-block;
+		margin: 0 0.75em;
+		font-size: 0.9em;
+	}
+
+	#footer .footer-contact a {
+		color: inherit;
+		border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
+	}
+
+	#footer .footer-contact a:hover {
+		border-bottom-color: rgba(255, 255, 255, 0.65);
+	}
+
+	@media screen and (max-width: 480px) {
+
+		#footer .footer-contact li {
+			display: block;
+			margin: 0.3em 0;
+		}
+
+	}
+
 /* Banner */
 
 	#banner {
