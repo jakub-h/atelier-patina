@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 from bs4 import BeautifulSoup, Tag
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 def parse_args() -> argparse.Namespace:
@@ -19,6 +19,7 @@ def parse_args() -> argparse.Namespace:
 def get_image_dimensions(image_path: Path) -> tuple[int, int]:
     """Get the dimensions of an image file"""
     with Image.open(image_path) as img:
+        img = ImageOps.exif_transpose(img)
         return img.size
 
 

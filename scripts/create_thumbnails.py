@@ -2,7 +2,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 def parse_args() -> argparse.Namespace:
@@ -26,7 +26,7 @@ def create_thumbnail(
     image_path: Path, thumb_dir: Path, size: tuple[int, int] = (600, 800)
 ) -> None:
     """Create a thumbnail with center crop to maintain aspect ratio."""
-    img = Image.open(image_path)
+    img = ImageOps.exif_transpose(Image.open(image_path))
 
     # Calculate target aspect ratio
     target_ratio = size[0] / size[1]
