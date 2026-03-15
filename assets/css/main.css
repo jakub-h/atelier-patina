@@ -1,3 +1,5 @@
+/* NOTE: Do NOT edit assets/sass/ files — there is no build step to compile them.
+   Edit this file (main.css) directly for any CSS changes. */
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
 

@@ -1,4 +1,5 @@
 import argparse
+import sys
 from pathlib import Path
 
 from bs4 import BeautifulSoup, Tag
@@ -62,7 +63,7 @@ def main() -> None:
 
     if not all(p.exists() for p in [gallery_pages_dir, images_dir]):
         print("Error: One or more directories do not exist")
-        exit(1)
+        sys.exit(1)
 
     # Process each gallery page
     for page_path in gallery_pages_dir.glob("*.html"):

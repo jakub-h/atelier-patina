@@ -1,10 +1,12 @@
 import argparse
+import sys
 from pathlib import Path
 
 from PIL import Image
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for the thumbnail script."""
     parser = argparse.ArgumentParser(
         description="Create thumbnails for images in a directory."
     )
@@ -23,7 +25,7 @@ def parse_args() -> argparse.Namespace:
 def create_thumbnail(
     image_path: Path, thumb_dir: Path, size: tuple[int, int] = (600, 800)
 ) -> None:
-    """Creates a thumbnail for a single image with center crop to maintain aspect ratio"""
+    """Create a thumbnail with center crop to maintain aspect ratio."""
     img = Image.open(image_path)
 
     # Calculate target aspect ratio
@@ -47,17 +49,21 @@ def create_thumbnail(
     img = img.resize(size, Image.Resampling.LANCZOS)
 
     thumb_path = thumb_dir / f"{image_path.stem}-thumb{image_path.suffix}"
-    img.save(thumb_path)
+    save_kwargs: dict = {"optimize": True}
+    if image_path.suffix.lower() in (".jpg", ".jpeg"):
+        save_kwargs["quality"] = 85
+    img.save(thumb_path, **save_kwargs)
 
 
 def main(args: argparse.Namespace) -> None:
+    """Create thumbnails for all images in the given directory."""
     args = parse_args()
     images_dir = Path(args.images_dir)
     size = tuple(args.size)
 
     if not images_dir.exists():
         print(f"Error: Directory {images_dir} does not exist")
-        exit(1)
+        sys.exit(1)
 
     # Create thumbnails subdirectory
     thumb_dir = images_dir / "thumbnails"
