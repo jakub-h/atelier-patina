@@ -1,8 +1,9 @@
 import argparse
+import sys
 from pathlib import Path
 
 from bs4 import BeautifulSoup, Tag
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 def parse_args() -> argparse.Namespace:
@@ -18,6 +19,7 @@ def parse_args() -> argparse.Namespace:
 def get_image_dimensions(image_path: Path) -> tuple[int, int]:
     """Get the dimensions of an image file"""
     with Image.open(image_path) as img:
+        img = ImageOps.exif_transpose(img)
         return img.size
 
 
@@ -62,7 +64,7 @@ def main() -> None:
 
     if not all(p.exists() for p in [gallery_pages_dir, images_dir]):
         print("Error: One or more directories do not exist")
-        exit(1)
+        sys.exit(1)
 
     # Process each gallery page
     for page_path in gallery_pages_dir.glob("*.html"):

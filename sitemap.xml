@@ -2,33 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://restaurovanipatina.cz/index.html</loc>
-    <lastmod>2025-05-28</lastmod>
+    <lastmod>2025-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://restaurovanipatina.cz/contact.html</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-10-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://restaurovanipatina.cz/our-services.html</loc>
-    <lastmod>2025-05-28</lastmod>
+    <lastmod>2025-07-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://restaurovanipatina.cz/about-us.html</loc>
-    <lastmod>2025-05-28</lastmod>
+    <lastmod>2025-07-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://restaurovanipatina.cz/realizations.html</loc>
-    <lastmod>2025-05-28</lastmod>
+    <lastmod>2025-07-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://restaurovanipatina.cz/gallery_pages/breuer.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://restaurovanipatina.cz/gallery_pages/kreslo-2.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://restaurovanipatina.cz/gallery_pages/kreslo.html</loc>
@@ -43,8 +55,32 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://restaurovanipatina.cz/gallery_pages/ratan-houpaci-kreslo.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://restaurovanipatina.cz/gallery_pages/retrokreslo.html</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://restaurovanipatina.cz/gallery_pages/stolek.html</loc>
     <lastmod>2025-07-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://restaurovanipatina.cz/gallery_pages/stul-historismus.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://restaurovanipatina.cz/gallery_pages/stul-roletka.html</loc>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -55,13 +91,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://restaurovanipatina.cz/gallery_pages/zidle.html</loc>
-    <lastmod>2025-07-26</lastmod>
+    <loc>https://restaurovanipatina.cz/gallery_pages/thonetky.html</loc>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://restaurovanipatina.cz/gallery_pages/retrokreslo.html</loc>
+    <loc>https://restaurovanipatina.cz/gallery_pages/zidle.html</loc>
     <lastmod>2025-07-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
