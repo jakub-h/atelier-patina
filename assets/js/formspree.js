@@ -14,4 +14,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    document.querySelectorAll('.photo-slot-remove').forEach(function (removeEl) {
+        removeEl.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var slot = removeEl.closest('.photo-slot');
+            var input = slot.querySelector('input[type="file"]');
+            var nameEl = slot.querySelector('.photo-slot-name');
+            input.value = '';
+            slot.classList.remove('has-file');
+            nameEl.textContent = 'Foto ' + input.name.replace('foto_', '');
+            nameEl.title = '';
+        });
+    });
 });

@@ -3743,7 +3743,7 @@ input, select, textarea {
 
 	.photo-upload-grid {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		gap: 0.5em;
 		margin-top: 0.25em;
 	}
@@ -3754,6 +3754,7 @@ input, select, textarea {
 		align-items: center;
 		justify-content: center;
 		gap: 0.3em;
+		position: relative;
 		background: rgba(144, 144, 144, 0.15);
 		border: 1px dashed rgba(144, 144, 144, 0.55);
 		border-radius: 3px;
@@ -3803,9 +3804,27 @@ input, select, textarea {
 		opacity: 0.85;
 	}
 
+	.photo-slot-remove {
+		display: none;
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		font-size: 1.2em;
+		color: rgba(180, 60, 60, 0.85);
+		cursor: pointer;
+	}
+
+	.photo-slot-remove:hover {
+		color: rgba(200, 40, 40, 1);
+	}
+
+	.photo-slot.has-file .photo-slot-remove {
+		display: block;
+	}
+
 	@media screen and (max-width: 480px) {
 		.photo-upload-grid {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: 1fr;
 		}
 	}
 
