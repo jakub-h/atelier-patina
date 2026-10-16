@@ -4551,3 +4551,26 @@ input, select, textarea {
     /* padding: 0.8em 0; */
   }
 }
+
+/* Vacation notice (contact page), toggled in assets/js/site-config.js */
+.vacation-notice {
+  border: 2px solid #69806B;
+  border-radius: 10px;
+  padding: 1.25em 1.5em;
+  margin-bottom: 2em;
+  text-align: center;
+  background: #f4f6f4;
+}
+
+.vacation-notice[hidden] {
+  display: none;
+}
+
+.vacation-notice h3 {
+  margin: 0 0 0.5em 0;
+  color: #69806B;
+}
+
+.vacation-notice p {
+  margin: 0;
+}
