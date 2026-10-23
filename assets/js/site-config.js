@@ -19,8 +19,8 @@ window.SITE_CONFIG = {
   phone: "+420 608 647 151",
 
   vacation: {
-    active: true,
-    until: "20. října",               // e.g. "20. října" – leave empty to hide the date
+    active: false,
+    until: "",              // e.g. "20. října" – leave empty to hide the date
     phone: "+420 608 654 171" // number to call during vacation; "" = email only
   }
 };
